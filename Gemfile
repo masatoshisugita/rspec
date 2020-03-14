@@ -16,7 +16,9 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capybara', '~> 2.13.0'
+  gem 'capybara', '~> 2.15.4'
+  gem 'launchy','~> 2.4.3'
+  gem 'webdrivers'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.6.0'
   gem 'spring-commands-rspec'
