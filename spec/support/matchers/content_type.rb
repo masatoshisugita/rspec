@@ -7,8 +7,22 @@ RSpec::Matchers.define :have_content_type do |expected|
   end
 end
 
+failure_message do |actual|
+  "Expected\"#{content_type(actual.content_type)}" +
+  "(#{content_type(actual.content_type)})\" to be Content Type " +
+  "\"#{content_type(expected)}\" (#{expected})"
+end
+
+failure_message_when_negated do |actual|
+  "Expected\"#{content_type(actual.content_type)}" +
+  "(#{actual.content_type})\" to not be Content Type " +
+  "\"#{content_type(expected)}\" (#{expected})"
+end
+
 def content_type(type)
   types = {html: "text/html",json: "application/json",}
   types[type.to_sym] || "unknoen content type"
 end
+
+RSpec::Matchers.alias_matcher :be_content_type ,:have_content_type
 end
