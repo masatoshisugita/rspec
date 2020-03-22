@@ -22,7 +22,8 @@
 
 .byebug_history
 
-# Ignore uploads from Paperclip
+# Ignore uploads from Paperclip (Paperclipによってアップロードされたファイルを無視する)
 /public/system
+/spec/test_uploads
 
 .ruby-version
